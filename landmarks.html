@@ -13,7 +13,8 @@
 <div id="top-bar">&nbsp; </div>
 <div class="page_wrapper">
 
-<div id="header">
+<div id="header" role="banner">
+<a href="#maincontent" class="skip_to_main">Skip to main content</a>
 	<div id="course_title_container" style="left:1em;">		
 	    <h1 id="section-title">Our Community Website</h1>
 	</div>
@@ -21,6 +22,7 @@
 
 <div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav">
     <div style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
+       <nav role="navigation" aria-labeledby="main-nav">
         <a name="main-nav" id="main-nav"></a>
         <ul style="" id="topnavlist">
         <li><a href="index.html" accesskey="1" title="Back to Index Alt+1">Back to Index</a></li>
@@ -30,10 +32,11 @@
             <li><a href="" class="fake" accesskey="5" title="Login Alt+5">My Choice</a></li>
             <li><a href="" class="fake" accesskey="6" title="Exercise Home Alt+6">Exercises</a></li> 
         </ul>
+        </nav>
     </div> 
 </div>
 
-<div class="logoutbar">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
+<div class="logoutbar" role="search">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
 <div class="crumbcontainer">
 		<div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links">&nbsp;</div>
 </div>
@@ -45,6 +48,7 @@
 		        <br/>
                 <h2 class="box"><span>Networking</span></h2>
                 <div class="box" id="menu_Networking">
+                <nav role="navigation" aria-labeledby="menu_Networking">
                     <ul class="social_side_menu">
                         <li><a href="" class="fake">My Network</a></li>
                         <li><a href="" class="fake">My Contacts</a></li>
@@ -53,15 +57,18 @@
                         <li><a href="" class="fake">Network Groups</a></li>
                         <li><a href="" class="fake">Settings</a></li>
                     </ul>
+                    </nav>
                     <div class="divider"></div>
                 </div>
 			<br/>
-                <h2 class="box"><span>People Online</span></h2>
+            <aside class="box" aria-label="people online" role="complementary" id="menu_UsersOnline" tabindex="0">
                 <div class="box" id="menu_UsersOnline">
+                <h2 class="box"><span>People Online</span></h2>
                     <ul style="padding: 0px; list-style: none;">
                         <li style="padding: 3px 0px;" id="mylogin">No one logged in</li>
                     </ul>
                 </div>
+                </aside>
 			<br/>
 		    </div>
 		</div>
@@ -72,9 +79,9 @@
 	<br style="clear:both;">
 	<a id="top"></a>
 
-<div class="profile">
+<main class="profile" role="main" id="maincontent" tabindex="0">
 <h2>Join our community</h2>
-<div id="feedback">&nbsp;</div>
+<div id="feedback" role="alert">&nbsp;</div>
 <form id="join_form">
 <dl>
 <dt>
@@ -86,7 +93,7 @@
 <label for="username">Username:</label><img src="images/required.gif"  alt="Required Field" class="img" />
 </dt>
 <dd><input id="username" class="input" type="text" value="" maxlength="30" size="20" name="username"  aria-required="true" aria-describedby="username_error"><br />
-        <span id="username_error">&nbsp;</span><br />
+        <span id="username_error" role="alert" >&nbsp;</span><br />
 </dd>
 <dt>
     <label for="password">Password:</label>
@@ -214,14 +221,14 @@
 
 		<br style="width:100%;clear:both;" />
 
-	</div>
-<div id="advertising">
+	</main>
+<aside id="advertising" role="complementary" aria-label="Advertising" tabindex="0">
 <h2>Advertising</h2>
 <div>
 <img src="images/rum_cover.jpg" alt="" />
 <br style="clear:both;"/>
 </div>
-</div>
+</aside>
 </div>
 
 <p><br><br>&nbsp;</p>
@@ -229,8 +236,8 @@
 <p><br><br>&nbsp;</p>
 </div>
 
-<div id="footer"> Copyright &copy; <a href="" class="fake">Chang School.</a>
-</div>
+<footer id="footer" role="contentinfo"> Copyright &copy; <a href="" class="fake">Chang School.</a>
+</footer>
 
 </body>
 </html>
