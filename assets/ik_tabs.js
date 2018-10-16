@@ -52,8 +52,6 @@
     				'tabindex': 0 // add to tab order				
 				})
 				.addClass('ik_tabpanel')
-				.on('keydown', {'plugin': plugin, 'index': i}, plugin.onKeyDown) // add keyboard event handler
-
 				.hide();
 				
 				lbl = $panel.attr('title'); // get tab label from panel title
@@ -120,16 +118,13 @@
 		
 		$panels // hide all panels
 		    .attr({
-        'aria-hidden': true,
-        'tabindex': -1,
-        'aria-selected': false
+        'aria-hidden': true
     })
 			.hide(); 
 		
 		$($panels[ind]) // show current panel
 		    .attr({
-        'aria-hidden': false,
-        'tabindex': 0
+        'aria-hidden': false
     })
 			.show(); 
 		
@@ -166,32 +161,16 @@ Plugin.prototype.onKeyDown = function (event) {
     $panels = plugin.panels;
        
     switch (event.keyCode) {
-        
-        case ik_utils.keys.up:
-        	$($tabs[ind]).focus(); // focus on a current tab
-        	break;
-
         case ik_utils.keys.left:
+        case ik_utils.keys.up:
             next = ind > 0 ? --ind : 0;
             plugin.selectTab({data:{'plugin': plugin, 'index': next}});
-            $($tabs[ind]).focus();
             break;
-
-        case ik_utils.keys.down:
-        	$($panels[ind]).focus(); // focus on a current panel
-			break;
-
-        case ik_utils.keys.tab:
-            next = ind < $tabs.length - 1 ? ++ind : $tabs.length - 1;
-            plugin.selectTab({data:{'plugin': plugin, 'index': next}});
-            break;
-
         case ik_utils.keys.right:
+        case ik_utils.keys.down:
             next = ind < $tabs.length - 1 ? ++ind : $tabs.length - 1;
             plugin.selectTab({data:{'plugin': plugin, 'index': next}});
-            $($tabs[ind]).focus();
             break;
-
         case ik_utils.keys.space:
             event.preventDefault();
             event.stopPropagation();
